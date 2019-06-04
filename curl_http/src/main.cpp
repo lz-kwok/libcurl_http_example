@@ -17,20 +17,21 @@
 using namespace std;
 using namespace mycurl;
 
-string posturl = "http://";
+string posturl = "http://47.111.88.91:6096/iot/data/receive";
 
 
 
 void *myHttp_run(void *para){
-	my_curl curl;
-	my_curl *CURLSAMPLE = new my_curl;
+//	my_curl curl;
+//	my_curl *CURLSAMPLE = new my_curl;
 	while(1){
 			string para = "{\"hello\":\"this is myHttp_run Test\"}";
 
 			string Response;
 			std::list<std::string> slist{("Content-Type:application/json;charset=UTF-8")};
 			// CURLcode code = curl.curl_post_req(posturl,para, Response, slist, true, 10, 10);
-			CURLcode code = CURLSAMPLE->curl_post_req(posturl,para, Response, slist, true, 10, 10);
+			// CURLcode code = CURLSAMPLE->curl_post_req(posturl,para, Response, slist, true, 10, 10);
+			CURLcode code = mycurl::CURL_Post_Req(posturl,para, Response, slist, true, 10, 10);
 			cout << "code:" << code << endl;
 			cout << "Response:" << Response << endl;
 
