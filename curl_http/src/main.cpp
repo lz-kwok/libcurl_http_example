@@ -17,7 +17,7 @@
 using namespace std;
 using namespace mycurl;
 
-string posturl = "http://47.111.88.91:6096/iot/data/receive";
+string posturl = "http://";
 
 
 
