@@ -8,7 +8,7 @@
 #include <signal.h>
 #include <curl/curl.h>
 #include <list>
-#include "bd_curl.hpp"
+#include "myHttp_curl.hpp"
 
 using namespace std;
 using namespace mycurl;
