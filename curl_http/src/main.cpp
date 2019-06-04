@@ -23,12 +23,14 @@ string posturl = "http://";
 
 void *myHttp_run(void *para){
 	my_curl curl;
+	my_curl *CURLSAMPLE = new my_curl;
 	while(1){
 			string para = "{\"hello\":\"this is myHttp_run Test\"}";
 
 			string Response;
 			std::list<std::string> slist{("Content-Type:application/json;charset=UTF-8")};
-			CURLcode code = curl.curl_post_req(posturl,para, Response, slist, true, 10, 10);
+			// CURLcode code = curl.curl_post_req(posturl,para, Response, slist, true, 10, 10);
+			CURLcode code = CURLSAMPLE->curl_post_req(posturl,para, Response, slist, true, 10, 10);
 			cout << "code:" << code << endl;
 			cout << "Response:" << Response << endl;
 
